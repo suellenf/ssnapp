@@ -1,0 +1,28 @@
+{% load staticfiles %}
+
+
+{% block content %}
+<body>
+<h1> Hello world!</h1>
+<p>I am going to be an app that checks if an SSN follows SSA's rules. <br><i>Please don't enter a real SSN in here!</i></p>
+
+<form action="/ssnapp" method="post">{% csrf_token %}
+
+		<p>
+		<div class="ui-widget">
+		<label for="id_code1">Enter the SSN you would like to test:</label>
+		<input id="id_code1" type="text" name="testnum" maxlength="100"
+		value= "{{ what}}" />
+		</div>
+		</p>
+
+		<input type="submit" value="Submit" />
+
+	</form>
+
+	<br>
+	<br>
+
+</body>
+
+{% endblock %}
